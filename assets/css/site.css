@@ -1,0 +1,211 @@
+/* =====================================================================
+   Greg Zobel — portfolio site
+   Shared stylesheet. Two registers, one identity.
+   Palette verified for WCAG 2.2 AA (see master plan).
+   ===================================================================== */
+
+:root{
+  /* AAA / forceful register */
+  --aaa-ink:#111111;
+  --aaa-paper:#F4F1EA;
+  --aaa-red:#C8102E;
+  --aaa-white:#FFFFFF;
+  /* Academic / restrained register */
+  --aca-charcoal:#1A1A1A;
+  --aca-cream:#FAF7F0;
+  --aca-yellow:#E8B007;
+  --aca-slate:#1F3A5F;
+  /* shared secondary text */
+  --ink-muted:#5A544B;
+
+  /* active register defaults to AAA tokens; academic pages override */
+  --bg:var(--aaa-paper);
+  --fg:var(--aaa-ink);
+  --accent:var(--aaa-red);
+  --link:var(--aca-slate);
+  --rule:var(--aaa-ink);
+
+  --maxw:64rem;
+  --gap:clamp(1rem,3vw,2rem);
+}
+
+/* Academic register: applied via <body class="register-academic"> */
+.register-academic{
+  --bg:var(--aca-cream);
+  --fg:var(--aca-charcoal);
+  --accent:var(--aca-yellow);
+  --link:var(--aca-slate);
+  --rule:var(--aca-charcoal);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:0.001ms!important;animation-iteration-count:1!important;transition-duration:0.001ms!important;}
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:"Atkinson Hyperlegible","Inter",system-ui,Arial,sans-serif;
+  font-size:1.125rem;
+  line-height:1.65;
+}
+
+/* ---- Skip link ---- */
+.skip{
+  position:absolute;left:-9999px;top:auto;
+  background:var(--aaa-ink);color:#fff;padding:.7rem 1rem;z-index:1000;
+  font-weight:700;text-decoration:none;
+}
+.skip:focus{left:1rem;top:1rem;}
+
+/* ---- Focus visibility (WCAG 2.2) ---- */
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid var(--aaa-red);
+  outline-offset:3px;
+}
+
+/* ---- Links: never color alone ---- */
+a{color:var(--link);text-underline-offset:.18em;}
+a:hover{text-decoration-thickness:2px;}
+
+img{max-width:100%;height:auto;display:block;}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1rem,4vw,2rem);}
+
+/* =========================  SITE HEADER / NAV  ===================== */
+.site-header{
+  background:var(--aaa-ink);
+  color:var(--aaa-paper);
+  border-bottom:8px solid var(--aaa-red);
+}
+.site-header .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.5rem;padding-block:.9rem;}
+.brand{
+  font-family:"Archivo Black","Arial Black",sans-serif;
+  text-transform:uppercase;letter-spacing:.04em;
+  font-size:1.15rem;color:var(--aaa-paper);text-decoration:none;margin-right:auto;
+}
+.brand:hover{color:#fff;}
+.site-nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:.25rem;margin:0;padding:0;}
+.site-nav a{
+  display:inline-block;color:var(--aaa-paper);text-decoration:none;
+  font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.82rem;
+  padding:.7rem .8rem;min-height:44px;/* target size */
+}
+.site-nav a:hover{background:var(--aaa-red);color:#fff;}
+.site-nav a[aria-current="page"]{color:var(--aaa-red);background:var(--aaa-paper);}
+.register-academic .site-nav a[aria-current="page"]{color:var(--aca-charcoal);box-shadow:inset 0 -5px 0 var(--aca-yellow);background:transparent;}
+.nav-store a{border:2px solid var(--aaa-paper);}
+.nav-store a::after{content:" \2197";}
+
+/* =========================  HERO  ================================= */
+.hero{background:var(--aaa-ink);color:var(--aaa-paper);}
+.register-academic .hero{background:var(--aca-charcoal);}
+.hero .wrap{padding-block:clamp(2rem,6vw,4rem);}
+.kicker{font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--aaa-red);font-size:.82rem;margin:0 0 .6rem;}
+.register-academic .kicker{color:var(--aca-yellow);}
+.hero h1{
+  font-family:"Archivo Black","Arial Black",sans-serif;
+  text-transform:uppercase;line-height:1.02;letter-spacing:.01em;
+  font-size:clamp(2.1rem,7vw,4rem);margin:.2rem 0;
+}
+.hero p.lede{font-size:clamp(1.1rem,2.4vw,1.4rem);max-width:46rem;margin:.8rem 0 0;}
+
+/* =========================  HEADINGS  ============================= */
+main h2{
+  font-family:"Archivo Black","Arial Black",sans-serif;
+  text-transform:uppercase;letter-spacing:.01em;font-size:clamp(1.4rem,3.5vw,1.9rem);
+  margin:2.6rem 0 .6rem;padding-top:1rem;border-top:5px solid var(--rule);
+}
+main h2 .n{color:var(--accent);}
+.register-academic main h2 .n{color:var(--aca-charcoal);background:var(--aca-yellow);padding:0 .4rem;}
+main h3{font-size:1.2rem;margin:1.6rem 0 .3rem;color:var(--accent);text-transform:uppercase;letter-spacing:.03em;}
+.register-academic main h3{color:var(--aca-slate);}
+main{padding-bottom:4rem;}
+main .wrap > p{max-width:48rem;}
+
+/* =========================  THESIS / BANNERS  ===================== */
+.thesis{
+  background:var(--aaa-red);color:#fff;
+  padding:1.3rem 1.5rem;margin:1.6rem 0;border-left:12px solid var(--aaa-ink);
+  font-size:1.18rem;font-weight:700;max-width:52rem;
+}
+.register-academic .thesis{background:var(--aca-yellow);color:var(--aca-charcoal);border-left-color:var(--aca-charcoal);}
+
+/* =========================  WORKING-ACROSS BAND  ================== */
+.band{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0;padding:0;list-style:none;}
+.band li{
+  background:var(--aaa-ink);color:var(--aaa-paper);
+  font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:.8rem;
+  padding:.5rem .8rem;
+}
+.register-academic .band li{background:var(--aca-charcoal);}
+
+/* =========================  ENTRANCES / CARDS  =================== */
+.grid{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin:1.4rem 0;padding:0;list-style:none;}
+.card{
+  background:var(--aaa-white);border:3px solid var(--rule);border-left-width:12px;
+  padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.4rem;
+}
+.card h3{margin:.1rem 0;color:var(--accent);}
+.register-academic .card{background:#fff;border-left-color:var(--aca-yellow);}
+.card .meta{font-size:.85rem;color:var(--ink-muted);}
+.card a.more{margin-top:auto;font-weight:700;}
+
+.entrance{
+  border:3px solid var(--aaa-ink);border-top-width:12px;background:var(--aaa-white);
+  padding:1.3rem 1.4rem;text-decoration:none;color:var(--aaa-ink);display:block;
+}
+.entrance:hover{background:var(--aaa-red);color:#fff;border-color:var(--aaa-red);}
+.entrance h3{font-family:"Archivo Black",sans-serif;text-transform:uppercase;font-size:1.25rem;margin:.2rem 0;color:inherit;}
+.entrance:hover h3{color:#fff;}
+.entrance p{margin:.3rem 0 0;color:inherit;}
+
+/* =========================  PUBLICATION / LIST ITEMS  ============= */
+.refs{list-style:none;margin:1rem 0;padding:0;}
+.refs li{padding:.7rem 0 .7rem 1rem;border-left:4px solid var(--accent);margin-bottom:.6rem;}
+.register-academic .refs li{border-left-color:var(--aca-yellow);}
+.refs .venue{font-style:italic;}
+
+/* =========================  AAA STAMPS  ========================== */
+.stamp{
+  display:inline-block;background:var(--aaa-red);color:#fff;
+  font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.74rem;
+  padding:.25rem .6rem;transform:rotate(-2deg);
+}
+.timecode{font-family:"Courier New",monospace;color:var(--aaa-red);font-weight:700;}
+
+/* =========================  FOOTER  ============================== */
+.site-footer{background:var(--aaa-ink);color:var(--aaa-paper);margin-top:3rem;border-top:8px solid var(--aaa-red);}
+.site-footer .wrap{padding-block:2rem;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));}
+.site-footer a{color:var(--aaa-paper);}
+.site-footer h2{font-size:.95rem;text-transform:uppercase;letter-spacing:.08em;border:0;padding:0;margin:0 0 .4rem;font-family:inherit;}
+.site-footer ul{list-style:none;margin:0;padding:0;}
+.site-footer li{margin:.2rem 0;}
+.badge{display:inline-block;border:2px solid var(--aaa-paper);padding:.3rem .6rem;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;}
+.fineprint{font-size:.82rem;color:#cfc9bd;}
+
+/* =========================  DRAFT BANNER  ======================== */
+.draft-banner{
+  background:var(--aca-yellow);color:#1A1A1A;
+  text-align:center;font-size:.95rem;padding:.55rem 1rem;
+  border-bottom:4px solid #111111;
+}
+.draft-banner strong{text-transform:uppercase;letter-spacing:.08em;}
+
+/* =========================  VIDEO  ============================== */
+.video-grid{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));margin:1.2rem 0;padding:0;list-style:none;}
+figure.video{margin:0;border:3px solid var(--rule);background:#000;display:flex;flex-direction:column;}
+figure.video video{width:100%;display:block;background:#000;}
+figure.video figcaption{background:var(--bg);color:var(--fg);padding:.6rem .8rem;font-size:.9rem;}
+figure.video figcaption .t{font-weight:700;display:block;}
+.placeholder-video{
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  min-height:9rem;background:#111111;color:#F4F1EA;border-bottom:3px dashed var(--aaa-red);padding:1rem;font-size:.9rem;
+}
+details.transcript{margin:.5rem 0 0;border-top:1px solid #cbc6ba;padding-top:.4rem;}
+details.transcript summary{cursor:pointer;font-weight:700;color:var(--link);}
+details.transcript summary:focus-visible{outline:3px solid var(--aaa-red);outline-offset:2px;}
