@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility Statement — Gregory Zobel</title>
+<meta name="description" content="Accessibility statement for zobelg.github.io: scope, target, testing, known limitations, and how to report problems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="register-academic">
+<a class="skip" href="#main">Skip to main content</a>
+<div class="draft-banner" role="note"><strong>Working draft</strong> — this site is in progress and not yet final.</div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Gregory&nbsp;Zobel</a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="academic.html">Academic</a></li>
+        <li><a href="academic.html#access">Access &amp; Openness</a></li>
+        <li><a href="aaa.html">Art &amp; AAA</a></li>
+        <li><a href="aaa.html#writing">Writing</a></li>
+        <li><a href="experiments.html">Experiments</a></li>
+        <li><a href="video.html">Video</a></li>
+        <li><a href="academic.html#about">About</a></li>
+        <li class="nav-store"><a href="https://compgizmo.gumroad.com/" rel="noopener">Store</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="hero"><div class="wrap">
+  <p class="kicker">Access &amp; Openness</p>
+  <h1>Accessibility Statement</h1>
+  <p class="lede">What this site aims for, how it’s tested, what’s not done yet, and how to tell me when something doesn’t work.</p>
+</div></div>
+<main id="main"><div class="wrap">
+
+  <h2>Our commitment</h2>
+  <p>Accessibility is the subject of this site and its standard. I am working to make every page usable by as many people as possible, including people who use screen readers, keyboard-only navigation, magnification, or reduced-motion settings.</p>
+
+  <h2>Scope</h2>
+  <p>This statement covers the first-party pages at <strong>zobelg.github.io</strong> (home, academic and teaching pages, access &amp; openness, art &amp; AAA, writing, experiments, video, about, and these statement pages). It does not cover third-party sites linked from here (for example Substack, Gumroad, or the Netlify experiments), which have their own accessibility practices.</p>
+
+  <h2>Target</h2>
+  <p>The goal is <strong>WCAG 2.2 Level AA</strong> (Web Content Accessibility Guidelines), which also covers the 2.1 requirements. The site is currently <strong>working toward</strong> that target, not yet formally conformant — see known limitations below.</p>
+
+  <h2>What’s in place</h2>
+  <ul>
+    <li>Semantic headings, landmarks, and lists; one clear page title and <code>h1</code> per page.</li>
+    <li>A skip-to-content link and visible keyboard focus on every page.</li>
+    <li>Colour combinations checked for contrast; links underlined, not signalled by colour alone.</li>
+    <li>Reduced-motion support (animation and smooth scrolling are disabled when requested); no autoplay.</li>
+    <li>Navigation targets at least 44×44 pixels; responsive layouts that reflow on small screens.</li>
+    <li>The videos are silent and each has a text version of its on-screen text.</li>
+    <li>The body typeface is Atkinson Hyperlegible, designed for low-vision readability.</li>
+  </ul>
+
+  <h2>Known limitations</h2>
+  <ul>
+    <li>The site is still a working draft; some pages are placeholders and are marked as such.</li>
+    <li>Full manual testing with screen readers (VoiceOver, NVDA), keyboard-only navigation, 200–400% zoom, custom text spacing, and forced-colors mode is still in progress.</li>
+    <li>Some text inside video frames uses red on black; small text in that combination may not meet AA contrast. Each clip’s text version provides an accessible equivalent.</li>
+    <li>Fonts currently load from Google Fonts; self-hosting is planned.</li>
+  </ul>
+
+  <h2>How it’s tested</h2>
+  <p>To date: automated HTML validation, contrast calculations, link checking, and visual review on desktop and narrow screens. Planned: the manual assistive-technology testing listed above.</p>
+
+  <h2>Report a problem</h2>
+  <p>If you hit a barrier on this site, please tell me and I’ll fix it. Email <a href="mailto:zobelg@wou.edu">zobelg@wou.edu</a> with the page address and a short description of the problem and your setup (browser and any assistive technology). I aim to respond within a few business days.</p>
+
+  <p class="meta">Statement date: draft, June 2026. Updated as remediation and testing continue.</p>
+</div></main>
+<footer class="site-footer"><div class="wrap">
+  <div><h2>Navigate</h2><ul><li><a href="index.html">Home</a></li><li><a href="academic.html">Academic</a></li><li><a href="video.html">Video</a></li><li><a href="https://compgizmo.gumroad.com/" rel="noopener">Store ↗</a></li></ul></div>
+  <div><h2>Elsewhere</h2><ul><li><a href="https://closedcaptionpassion.substack.com/" rel="noopener">Substack ↗</a></li><li><a href="https://wou.academia.edu/GregoryZobel" rel="noopener">Academia.edu ↗</a></li><li><a href="mailto:zobelg@wou.edu">zobelg@wou.edu</a></li></ul></div>
+  <div><h2>Access</h2><p><span class="badge">Working toward WCAG 2.2 AA</span></p><p class="fineprint"><a href="accessibility.html">Accessibility statement</a> · <a href="ai-use.html">AI use</a></p></div>
+</div></footer>
+</body>
+</html>

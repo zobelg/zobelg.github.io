@@ -97,7 +97,7 @@ img{max-width:100%;height:auto;display:block;}
 }
 .site-nav a:hover{background:var(--aaa-red);color:#fff;}
 .site-nav a[aria-current="page"]{color:var(--aaa-red);background:var(--aaa-paper);}
-.register-academic .site-nav a[aria-current="page"]{color:var(--aca-charcoal);box-shadow:inset 0 -5px 0 var(--aca-yellow);background:transparent;}
+.register-academic .site-nav a[aria-current="page"]{color:var(--aaa-paper);box-shadow:inset 0 -5px 0 var(--aca-yellow);background:transparent;}
 .nav-store a{border:2px solid var(--aaa-paper);}
 .nav-store a::after{content:" \2197";}
 
