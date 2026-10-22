@@ -221,3 +221,5 @@ thead th{border-bottom:3px solid var(--accent);}
 tfoot th,tfoot td{font-weight:700;border-bottom:0;border-top:3px solid var(--accent);}
 .register-academic tfoot th,.register-academic tfoot td{border-top-color:var(--aca-yellow);}
 td:last-child,th:last-child{text-align:right;}
+a.badge{color:inherit;text-decoration:none;margin-left:.3rem;}
+a.badge:hover,a.badge:focus{background:var(--aaa-paper);color:var(--aaa-ink);}
