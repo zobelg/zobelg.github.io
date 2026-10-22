@@ -209,3 +209,15 @@ figure.video figcaption .t{font-weight:700;display:block;}
 details.transcript{margin:.5rem 0 0;border-top:1px solid #cbc6ba;padding-top:.4rem;}
 details.transcript summary{cursor:pointer;font-weight:700;color:var(--link);}
 details.transcript summary:focus-visible{outline:3px solid var(--aaa-red);outline-offset:2px;}
+
+/* =========================  TABLES  ============================== */
+.tables{display:flex;flex-wrap:wrap;gap:1.5rem;margin:1rem 0 1.5rem;}
+.tables table{flex:1 1 16rem;max-width:24rem;}
+table{border-collapse:collapse;width:100%;font-size:1rem;}
+caption{text-align:left;font-weight:700;padding:.4rem 0;caption-side:top;}
+th,td{text-align:left;padding:.45rem .7rem;border-bottom:1px solid var(--accent);}
+thead th{border-bottom:3px solid var(--accent);}
+.register-academic th,.register-academic td{border-bottom-color:var(--aca-yellow);}
+tfoot th,tfoot td{font-weight:700;border-bottom:0;border-top:3px solid var(--accent);}
+.register-academic tfoot th,.register-academic tfoot td{border-top-color:var(--aca-yellow);}
+td:last-child,th:last-child{text-align:right;}
