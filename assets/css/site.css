@@ -228,7 +228,7 @@ a.badge:hover,a.badge:focus{background:var(--aaa-paper);color:var(--aaa-ink);}
 
 /* =========================  PAGE TOC  ============================ */
 .toc{margin:0 0 2rem;padding:1rem 1.2rem;border:2px solid var(--accent);background:var(--bg);}
-.toc h2{font-size:1rem;margin:0 0 .5rem;text-transform:uppercase;letter-spacing:.06em;}
+.toc h2{font-size:1rem;margin:0 0 .5rem;border:0;padding:0;text-transform:uppercase;letter-spacing:.06em;}
 .toc ol{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;}
 .toc li{margin:0;}
 .toc a{font-weight:700;}
