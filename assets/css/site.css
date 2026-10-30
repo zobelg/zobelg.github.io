@@ -171,6 +171,7 @@ main .wrap > p{max-width:48rem;}
 .refs li{padding:.7rem 0 .7rem 1rem;border-left:4px solid var(--accent);margin-bottom:.6rem;}
 .register-academic .refs li{border-left-color:var(--aca-yellow);}
 .refs .venue{font-style:italic;}
+.refs li{overflow-wrap:break-word;}
 
 /* =========================  AAA STAMPS  ========================== */
 .stamp{
